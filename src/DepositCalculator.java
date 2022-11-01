@@ -9,7 +9,6 @@ public class DepositCalculator  {
 
     double calculateComplexPercent (double a, int d) {
         double pay = a * Math.pow((1 + 0.06 / 12), 12 * d);
-
         return setRandom(pay); 
     }
 
@@ -19,7 +18,6 @@ public class DepositCalculator  {
 
     double setRandom (double value) {
         double Scale = Math.pow (10, 2);
-
         return Math.round(value * Scale) / Scale;
     }
 
@@ -27,6 +25,7 @@ public class DepositCalculator  {
         int period;
         int action;
         int amount;
+        double out;
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите сумму вклада в рублях:");
@@ -36,7 +35,7 @@ public class DepositCalculator  {
         System.out.println("Выберите тип вклада, 1 - вклад с обычным процентом, 2 - вклад с капитализацией:");
         action = scanner.nextInt();
 
-        double out = 0; 
+        out = 0; 
 
         if (action == 1) {
             out = calculateSimplePercent(amount, period);
