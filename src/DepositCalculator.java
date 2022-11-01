@@ -4,13 +4,13 @@ import java.util.Scanner;
 public class DepositCalculator  {
 
     public static void main (String[] args) {
-        new DepositCalculator ().calculationOfDeposit(); //DepositCalculator () - пробел между названием класса и скобками кажется лишним
+        new DepositCalculator ().calculationOfDeposit(); 
     }
 
     double calculateComplexPercent (double a, int d) {
         double pay = a * Math.pow((1 + 0.06 / 12), 12 * d);
 
-        return setRandom(pay); // пустая строка перед return вроде бы не нужна. В следующем блоке перед return пустой строки нет, а через один - снова есть
+        return setRandom(pay); 
     }
 
     double calculateSimplePercent (double doubleAmount, int depositPeriod) {
@@ -36,7 +36,7 @@ public class DepositCalculator  {
         System.out.println("Выберите тип вклада, 1 - вклад с обычным процентом, 2 - вклад с капитализацией:");
         action = scanner.nextInt();
 
-        double out = 0; // не помню что про это писалось в теории, но вроде бы переменные лучше объявлять одним блоком. И у меня тоже вроде эта же ошибка есть ) 
+        double out = 0; 
 
         if (action == 1) {
             out = calculateSimplePercent(amount, period);
